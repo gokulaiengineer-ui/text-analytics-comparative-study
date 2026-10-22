@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "python": "3.12.3",
+    "nltk": "3.10.3",
+    "spacy": "3.8.16",
+    "spacy_model": "en_core_web_sm",
+    "cpu_count": 1,
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "date": "2026-10-19"
+  },
+  "data": {
+    "n_docs": 100,
+    "total_chars": 380806,
+    "avg_chars": 3808,
+    "pos_sentences": 500,
+    "pos_tokens": 11784
+  },
+  "features": [
+    [
+      "Implementation language",
+      "Python",
+      "Python / Cython",
+      "Java (REST, Python wrappers)"
+    ],
+    [
+      "Licence",
+      "Apache 2.0",
+      "MIT",
+      "GPL v3 (commercial licence available)"
+    ],
+    [
+      "Tokenization + sentence split",
+      "✔",
+      "✔",
+      "✔"
+    ],
+    [
+      "Stemming",
+      "✔ (Porter, Snowball, Lancaster)",
+      "✘ (lemmas only)",
+      "✘ (lemmas only)"
+    ],
+    [
+      "Lemmatization",
+      "✔ (WordNet, POS needed)",
+      "✔",
+      "✔"
+    ],
+    [
+      "POS tagging",
+      "✔",
+      "✔",
+      "✔"
+    ],
+    [
+      "Named-entity recognition",
+      "◐ (basic chunker)",
+      "✔ (18 types)",
+      "✔ (incl. dates, numbers via SUTime)"
+    ],
+    [
+      "Dependency parsing",
+      "◐ (no pretrained model)",
+      "✔",
+      "✔"
+    ],
+    [
+      "Constituency parsing",
+      "◐ (no pretrained model)",
+      "✘ (plugin)",
+      "✔"
+    ],
+    [
+      "Coreference resolution",
+      "✘",
+      "◐ (experimental)",
+      "✔"
+    ],
+    [
+      "Sentiment analysis",
+      "✔ (VADER lexicon)",
+      "✘ (add-on)",
+      "✔ (neural)"
+    ],
+    [
+      "Open information extraction",
+      "✘",
+      "✘",
+      "✔ (OpenIE)"
+    ],
+    [
+      "Pretrained word vectors",
+      "✘",
+      "✔ (md / lg models)",
+      "✘"
+    ],
+    [
+      "Built-in corpora / lexicons",
+      "✔ (WordNet, Brown, Treebank ...)",
+      "✘",
+      "✘"
+    ],
+    [
+      "Train custom models",
+      "✔",
+      "✔ (config system)",
+      "✔ (e.g. CRF NER)"
+    ],
+    [
+      "Languages with pretrained models",
+      "Limited tokenizers / stopwords",
+      "~25 pipelines, 70+ tokenizers",
+      "8 (EN, AR, ZH, FR, DE, HU, IT, ES)"
+    ],
+    [
+      "Primary design goal",
+      "Teaching / research",
+      "Production speed",
+      "Linguistic depth"
+    ]
+  ],
+  "ease": {
+    "loc": {
+      "NLTK": 8,
+      "spaCy": 6,
+      "CoreNLP": 5
+    },
+    "table": [
+      [
+        "Install",
+        "pip install nltk",
+        "pip install spacy",
+        "Download ~0.5 GB zip + JDK"
+      ],
+      [
+        "Extra downloads",
+        "Per-task data via nltk.download (6+ packages here)",
+        "1 model (python -m spacy download)",
+        "Models bundled in the zip"
+      ],
+      [
+        "Lines for the common job",
+        8,
+        6,
+        5
+      ],
+      [
+        "Needs a running server",
+        "No",
+        "No",
+        "Yes (HTTP, JVM)"
+      ],
+      [
+        "Output object",
+        "Lists / tuples / Trees",
+        "Doc, Token, Span objects",
+        "JSON"
+      ],
+      [
+        "Documentation",
+        "Free book + API docs",
+        "Extensive guides + course",
+        "Reference docs, fewer tutorials"
+      ]
+    ]
+  },
+  "speed": {
+    "NLTK": {
+      "Tokenization": {
+        "seconds": 0.238,
+        "docs_per_sec": 420.84,
+        "tokens": 75177,
+        "tokens_per_sec": 316376
+      },
+      "+ POS tagging": {
+        "seconds": 2.212,
+        "docs_per_sec": 45.2,
+        "tokens": 75177,
+        "tokens_per_sec": 33982
+      },
+      "+ Lemma + NER": {
+        "seconds": 72.65,
+        "docs_per_sec": 1.38,
+        "tokens": 75177,
+        "tokens_per_sec": 1035
+      }
+    },
+    "spaCy": {
+      "Tokenization": {
+        "seconds": 0.296,
+        "docs_per_sec": 337.39,
+        "tokens": 79819,
+        "tokens_per_sec": 269305
+      },
+      "+ POS tagging": {
+        "seconds": 3.578,
+        "docs_per_sec": 27.95,
+        "tokens": 79819,
+        "tokens_per_sec": 22309
+      },
+      "+ Lemma + NER": {
+        "seconds": 6.589,
+        "docs_per_sec": 15.18,
+        "tokens": 79819,
+        "tokens_per_sec": 12114
+      }
+    },
+    "spaCy (nlp.pipe)": {
+      "+ Lemma + NER": {
+        "seconds": 5.893,
+        "docs_per_sec": 16.97,
+        "tokens": 79819,
+        "tokens_per_sec": 13544
+      }
+    }
+  },
+  "pos_accuracy": {
+    "NLTK": 96.58,
+    "spaCy": 95.88
+  },
+  "startup": {
+    "NLTK": {
+      "startup_sec": 5.36,
+      "memory_mb": 324
+    },
+    "spaCy": {
+      "startup_sec": 1.33,
+      "memory_mb": 143
+    }
+  },
+  "scores": [
+    [
+      "Feature breadth",
+      3,
+      4,
+      5
+    ],
+    [
+      "Ease of use",
+      4,
+      5,
+      3
+    ],
+    [
+      "Learning / teaching",
+      5,
+      4,
+      3
+    ],
+    [
+      "Production readiness",
+      2,
+      5,
+      4
+    ]
+  ]
+}

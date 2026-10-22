@@ -1,0 +1,8 @@
+nltk
+spacy
+psutil
+requests
+pandas
+matplotlib
+numpy
+reportlab
